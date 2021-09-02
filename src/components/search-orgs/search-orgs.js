@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Typography, TextField, Button } from "@material-ui/core";
+import { TextField, Button } from "@material-ui/core";
 
 import "./search-orgs.css";
 
@@ -9,7 +9,6 @@ const SearchOrgs = ({ onSearchOrgsClick }) => {
 
   return (
     <>
-      <Typography variant="h3">Search Org Repos</Typography>
       <div className="searchContainer">
         <TextField
           value={searchOrgQuery}

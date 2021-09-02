@@ -10,6 +10,9 @@ const Routes = () => {
       <Route Path="/">
         <OrgRepos />
       </Route>
+      <Route Path={`/:repository?/commits`}>
+        <OrgRepos />
+      </Route>
     </Switch>
   );
 };

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import Typography from "@material-ui/core/Typography";
+
 import SearchOrgs from "../../components/search-orgs/search-orgs";
 import RepoList from "../../components/repo-list/repo-list";
 import RenderComponent from "../../components/render-component/render-component";
@@ -23,6 +25,7 @@ const OrgRepos = () => {
 
   return (
     <>
+      <Typography variant="h3">Search Org Repos</Typography>
       <SearchOrgs
         onSearchOrgsClick={searchInput => handleSearchOrgsClick(searchInput)}
       />

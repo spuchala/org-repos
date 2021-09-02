@@ -15,7 +15,7 @@ describe("Search Orgs Componenet tests", () => {
   });
 
   test("renders search orgs header", () => {
-    const searchOrgsHeaderElement = screen.getByText(/Search Org Repos/i);
+    const searchOrgsHeaderElement = screen.getByText(/Search/i);
     expect(searchOrgsHeaderElement).toBeInTheDocument();
   });
 

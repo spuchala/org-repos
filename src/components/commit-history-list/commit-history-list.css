@@ -6,3 +6,6 @@
 .titleCaptionContainer {
   text-align: left;
 }
+.inline {
+  display: "inline";
+}

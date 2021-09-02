@@ -11,6 +11,9 @@ const Routes = () => {
       <Route exact path="/">
         <OrgReposView />
       </Route>
+      <Route exact path="/:org/repositories">
+        <OrgReposView />
+      </Route>
       <Route path="/:org/:repository/commits">
         <RepoCommitsView />
       </Route>

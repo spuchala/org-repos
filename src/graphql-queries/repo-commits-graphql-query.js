@@ -13,6 +13,8 @@ const repoRecentCommitsgraphQLQuery = gql`
                     author {
                       name
                     }
+                    committedDate
+                    message
                   }
                 }
               }

@@ -18,10 +18,26 @@ const CommitHistoryList = ({ commits }) => {
       </div>
       <List>
         {commits.map(({ node }, index) => {
-          const { author } = node;
+          const { author, committedDate, message } = node;
           return (
-            <ListItem key={index} button>
-              <ListItemText primary={author.name} />
+            <ListItem key={index} alignItems="flex-start" button>
+              <ListItemText
+                primary={author.name}
+                secondary={
+                  <>
+                    <Typography
+                      component="span"
+                      variant="body2"
+                      className="inline"
+                      color="textPrimary"
+                    >
+                      {committedDate}
+                    </Typography>
+                    <br />
+                    {message}
+                  </>
+                }
+              />
             </ListItem>
           );
         })}

@@ -1,8 +1,10 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 import { useQuery } from "@apollo/client";
-import Typography from "@material-ui/core/Typography";
+import { Typography, Button } from "@material-ui/core";
+import KeyboardBackspaceIcon from "@material-ui/icons/KeyboardBackspace";
 
 import RenderComponent from "../../components/render-component/render-component";
 import CommitHistoryList from "../../components/commit-history-list/commit-history-list";
@@ -11,6 +13,7 @@ import "./repo-commits-view.css";
 
 const RepoCommitsView = () => {
   const { org, repository } = useParams();
+  const routeHistory = useHistory();
 
   const { data, loading, error } = useQuery(repoRecentCommitsgraphQLQuery, {
     variables: { owner: org, name: repository }
@@ -19,6 +22,19 @@ const RepoCommitsView = () => {
   return (
     <>
       <Typography variant="h3">Repo Commits</Typography>
+      {data && (
+        <div className="backContainer">
+          <Button
+            variant="contained"
+            color="primary"
+            size="small"
+            startIcon={<KeyboardBackspaceIcon />}
+            onClick={() => routeHistory.goBack()}
+          >
+            Back
+          </Button>
+        </div>
+      )}
       <RenderComponent
         data={data?.repository?.defaultBranchRef?.target?.history?.edges}
         loading={loading}

@@ -3,13 +3,13 @@ import React from "react";
 import { screen, fireEvent, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
-import OrgRepos from "./org-repos";
+import OrgReposView from "./org-repos-view";
 import renderWithMockApolloAndRouter from "../../test-helpers/render-with-mock-apollo-and-router";
 import mockOrgRepos from "../../test-helpers/mock-data/mock-org-repos";
 
 describe("OrgRepos View tests", () => {
   beforeEach(() => {
-    renderWithMockApolloAndRouter(<OrgRepos />);
+    renderWithMockApolloAndRouter(<OrgReposView />);
   });
 
   test("renders org repos view properly", () => {

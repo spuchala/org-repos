@@ -7,7 +7,7 @@ import RepoList from "./repo-list";
 
 import mockOrgRepos from "../../test-helpers/mock-data/mock-org-repos";
 
-describe("ProjectList Component tests", () => {
+describe("RepoList Component tests", () => {
   const props = {
     repos: mockOrgRepos.data.search.edges,
     repositoryCount: mockOrgRepos.data.search.repositoryCount,
@@ -18,7 +18,7 @@ describe("ProjectList Component tests", () => {
     render(<RepoList {...props} />);
   });
 
-  test("renders org projects in a list", () => {
+  test("renders org repos in a list", () => {
     const hysterixItemElement = screen.getByText(/Hystrix/i);
     expect(hysterixItemElement).toBeInTheDocument();
   });

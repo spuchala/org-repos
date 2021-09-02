@@ -2,16 +2,17 @@ import React from "react";
 
 import { Switch, Route } from "react-router-dom";
 
-import OrgRepos from "../views/org-repos/org-repos";
+import OrgReposView from "../views/org-repos-view/org-repos-view";
+import RepoCommitsView from "../views/repo-commits-view/repo-commits-view";
 
 const Routes = () => {
   return (
     <Switch>
-      <Route Path="/">
-        <OrgRepos />
+      <Route exact path="/">
+        <OrgReposView />
       </Route>
-      <Route Path={`/:repository?/commits`}>
-        <OrgRepos />
+      <Route path="/:org/:repository/commits">
+        <RepoCommitsView />
       </Route>
     </Switch>
   );

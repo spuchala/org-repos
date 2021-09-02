@@ -1,26 +1,31 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 
+import { useQuery } from "@apollo/client";
 import Typography from "@material-ui/core/Typography";
 
 import SearchOrgs from "../../components/search-orgs/search-orgs";
 import RepoList from "../../components/repo-list/repo-list";
 import RenderComponent from "../../components/render-component/render-component";
-import { useQuery } from "@apollo/client";
+
 import orgSearchGraphQLQuery from "../../graphql-queries/org-search-graphql-query";
 
-const OrgRepos = () => {
+const OrgReposView = () => {
   const [searchOrgsQuery, setsearchOrgsQuery] = useState("");
 
   const { data, loading, error } = useQuery(orgSearchGraphQLQuery, {
     variables: { query: `org:${searchOrgsQuery}` },
     skip: searchOrgsQuery === ""
   });
+
+  const routeHistory = useHistory();
+
   const handleSearchOrgsClick = searchInput => {
     setsearchOrgsQuery(searchInput);
   };
 
-  const handleRepoClick = project => {
-    console.log(project);
+  const handleRepoClick = repo => {
+    routeHistory.push({ pathname: `/${searchOrgsQuery}/${repo}/commits` });
   };
 
   return (
@@ -46,4 +51,4 @@ const OrgRepos = () => {
   );
 };
 
-export default OrgRepos;
+export default OrgReposView;

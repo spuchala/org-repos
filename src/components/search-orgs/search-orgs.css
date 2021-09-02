@@ -1,0 +1,10 @@
+.searchInput {
+  width: 400px;
+}
+
+.searchContainer {
+  display: inline-flex;
+  column-gap: 10px;
+  justify-content: space-between;
+  margin: 60px;
+}

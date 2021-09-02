@@ -1,0 +1,11 @@
+.progressContainer {
+  margin-top: 80px;
+}
+.errorMessageContainer {
+  text-align: center;
+  margin-top: 80px;
+}
+.noDataMessageContainer {
+  text-align: center;
+  margin-top: 80px;
+}

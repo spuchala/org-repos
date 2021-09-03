@@ -37,7 +37,7 @@ const OrgReposView = () => {
 
   return (
     <>
-      <Typography variant="h3">Search Org Repos</Typography>
+      <Typography variant="h5">Search Org Repos</Typography>
       <SearchOrgs
         searchOrgQuery={org ?? ""}
         onSearchOrgsClick={searchInput => handleSearchOrgsClick(searchInput)}

@@ -21,6 +21,9 @@ const RepoList = ({ repos, repositoryCount, onRepoClick }) => {
         <Typography variant="caption" display="block" gutterBottom>
           Showing top 10 repos
         </Typography>
+        <Typography variant="caption" display="block" gutterBottom>
+          Click on the repo to view latest commits
+        </Typography>
       </div>
       <List>
         {repos.map(({ node }, index) => {
@@ -33,7 +36,7 @@ const RepoList = ({ repos, repositoryCount, onRepoClick }) => {
             >
               <ListItemText primary={node.name} />
               <ListItemSecondaryAction>
-                <IconButton edge="end" aria-label="comments">
+                <IconButton edge="end" aria-label="comments" disableRipple>
                   <CommentIcon />
                 </IconButton>
               </ListItemSecondaryAction>

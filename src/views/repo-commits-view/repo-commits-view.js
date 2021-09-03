@@ -21,7 +21,7 @@ const RepoCommitsView = () => {
 
   return (
     <>
-      <Typography variant="h3">Repo Commits</Typography>
+      <Typography variant="h5">Repo Commits</Typography>
       {data && (
         <div className="backContainer">
           <Button

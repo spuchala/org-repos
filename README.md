@@ -11,6 +11,8 @@
 
 #### \* This app is built on GitHub GraphQL API V4
 
+#### \* Using Material UI design framework components as building blocks
+
 | Directory       | Description                                                       |
 | --------------- | ----------------------------------------------------------------- |
 | views           | container components that orchestrate the repos/commits pages     |
@@ -28,7 +30,7 @@
 git clone https://github.com/spuchala/org-repos.git
 ```
 
-### 2. Generate a GitHub 'personal access token (PAT)' that will be used as a oAuth Bearer token in the project. Steps in the link below.
+### 2. Generate a GitHub 'personal access token (PAT)' that will be used as an oAuth Bearer token in the project. Steps in the link below.
 
 ```bash
 https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token

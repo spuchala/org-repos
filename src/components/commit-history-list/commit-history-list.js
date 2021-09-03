@@ -6,6 +6,8 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 
+import moment from "moment";
+
 import "./commit-history-list.css";
 
 const CommitHistoryList = ({ commits }) => {
@@ -31,7 +33,7 @@ const CommitHistoryList = ({ commits }) => {
                       className="inline"
                       color="textPrimary"
                     >
-                      {committedDate}
+                      {moment(committedDate).format("MMM D Y")}
                     </Typography>
                     <br />
                     {message}

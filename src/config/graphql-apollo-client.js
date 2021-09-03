@@ -6,7 +6,7 @@ const apolloClient = new ApolloClient({
   request: async operation => {
     operation.setContext({
       headers: {
-        authorization: "Bearer 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"
+        authorization: "Bearer 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"
       }
     });
   }

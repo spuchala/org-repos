@@ -7,7 +7,8 @@ import SearchOrgs from "./search-orgs";
 
 describe("Search Orgs Componenet tests", () => {
   const props = {
-    onSearchOrgsClick: jest.fn()
+    onSearchOrgsClick: jest.fn(),
+    searchOrgQuery: ""
   };
 
   beforeEach(() => {

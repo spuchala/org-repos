@@ -4,14 +4,15 @@ import { TextField, Button } from "@material-ui/core";
 
 import "./search-orgs.css";
 
-const SearchOrgs = ({ onSearchOrgsClick }) => {
-  const [searchOrgQuery, setSearchOrgQuery] = useState("");
+const SearchOrgs = ({ onSearchOrgsClick, searchOrgQuery }) => {
+  const [searchOrgQueryState, setSearchOrgQueryState] =
+    useState(searchOrgQuery);
 
   return (
     <>
       <div className="searchContainer">
         <TextField
-          value={searchOrgQuery}
+          value={searchOrgQueryState}
           className="searchInput"
           placeholder="Search Orgs"
           variant="outlined"
@@ -20,14 +21,14 @@ const SearchOrgs = ({ onSearchOrgsClick }) => {
             "data-testid": "search-orgs-textinput"
           }}
           onChange={event => {
-            setSearchOrgQuery(event.target.value);
+            setSearchOrgQueryState(event.target.value);
           }}
         />
         <Button
           variant="contained"
           color="primary"
           size="large"
-          onClick={() => onSearchOrgsClick(searchOrgQuery)}
+          onClick={() => onSearchOrgsClick(searchOrgQueryState)}
         >
           Search
         </Button>

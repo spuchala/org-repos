@@ -1,11 +1,11 @@
 import React from "react";
 
-import { screen, fireEvent, waitFor } from "@testing-library/react";
+import { screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
 import OrgReposView from "./org-repos-view";
 import renderWithMockApolloAndRouter from "../../test-helpers/render-with-mock-apollo-and-router";
-import mockOrgRepos from "../../test-helpers/mock-data/mock-org-repos";
+//import mockOrgRepos from "../../test-helpers/mock-data/mock-org-repos";
 
 describe("OrgRepos View tests", () => {
   beforeEach(() => {
@@ -17,7 +17,7 @@ describe("OrgRepos View tests", () => {
     expect(headerElement).toBeInTheDocument();
   });
 
-  test("handles user search of an org and displays org search results", async () => {
+  test("redirects user org search to org/repositories url", async () => {
     const searchOrgsTextInputElement = screen.getByTestId(
       "search-orgs-textinput"
     );
@@ -33,12 +33,7 @@ describe("OrgRepos View tests", () => {
     // click search orgs button
     fireEvent.click(searchOrgsButtonElement);
 
-    // expect to have org search results
-    await waitFor(() => {
-      const repoCountElement = screen.getByText(
-        `${mockOrgRepos.data.search.repositoryCount} repos`
-      );
-      expect(repoCountElement).toBeInTheDocument();
-    });
+    const headerElement = screen.getByText(/Search Org Repos/i);
+    expect(headerElement).toBeInTheDocument();
   });
 });

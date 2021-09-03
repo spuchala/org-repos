@@ -1,7 +1,7 @@
 import React from "react";
 import routeData from "react-router";
 
-import { screen, waitFor } from "@testing-library/react";
+import { fireEvent, screen, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
 import RepoCommitsView from "./repo-commits-view";
@@ -26,6 +26,21 @@ describe("RepoCommits View tests", () => {
     await waitFor(() => {
       const testCommitedByUserElement = screen.getByText(/Test User1/i);
       expect(testCommitedByUserElement).toBeInTheDocument();
+    });
+  });
+
+  test("takes user back to repo search page on click of backButton", async () => {
+    // mock on react router useParams hook to inject org, repo url params
+    jest
+      .spyOn(routeData, "useParams")
+      .mockReturnValue({ org: "netflix", repository: "Hystrix" });
+
+    renderWithMockApolloAndRouter(<RepoCommitsView />);
+
+    // expect to have recent commits in the list from graphQL query
+    await waitFor(() => {
+      const testCommitedByUserElement = screen.getByText(/Back/i);
+      fireEvent.click(testCommitedByUserElement);
     });
   });
 });

@@ -25,7 +25,12 @@ const RepoList = ({ repos, repositoryCount, onRepoClick }) => {
       <List>
         {repos.map(({ node }, index) => {
           return (
-            <ListItem key={index} button onClick={() => onRepoClick(node.name)}>
+            <ListItem
+              role="repo-list-item"
+              key={index}
+              button
+              onClick={() => onRepoClick(node.name)}
+            >
               <ListItemText primary={node.name} />
               <ListItemSecondaryAction>
                 <IconButton edge="end" aria-label="comments">

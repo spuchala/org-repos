@@ -20,9 +20,10 @@ const RenderComponent = ({ loading, data, error, children }) => {
       </div>
     );
   } else if (error) {
+    debugger;
     return (
       <div className="errorMessageContainer">
-        <Typography>{errorMessage}</Typography>
+        <Typography>{error.message ? error.message : errorMessage}</Typography>
       </div>
     );
   } else if (isEmpty(data)) {

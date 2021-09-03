@@ -24,7 +24,7 @@
 | constants       | reusable constants                                                |
 
 ## Component Structure
-![Diagram](images/components_structure.png)
+![Diagram](public/components_structure.png)
 
 ## Steps to run the app
 

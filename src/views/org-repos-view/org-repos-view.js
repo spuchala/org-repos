@@ -10,6 +10,7 @@ import RenderComponent from "../../components/render-component/render-component"
 
 import orgSearchGraphQLQuery from "../../graphql-queries/org-search-graphql-query";
 
+// landing page for app and also for search org
 const OrgReposView = () => {
   const routeHistory = useHistory();
 

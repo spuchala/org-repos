@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
@@ -46,6 +47,10 @@ const CommitHistoryList = ({ commits }) => {
       </List>
     </Paper>
   );
+};
+
+CommitHistoryList.propTypes = {
+  commits: PropTypes.array.isRequired
 };
 
 export default CommitHistoryList;

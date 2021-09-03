@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import { Typography, CircularProgress } from "@material-ui/core";
 
@@ -34,6 +35,12 @@ const RenderComponent = ({ loading, data, error, children }) => {
     );
   }
   return <div>{children}</div>;
+};
+
+RenderComponent.propTypes = {
+  loading: PropTypes.bool,
+  error: PropTypes.bool,
+  data: PropTypes.array
 };
 
 export default RenderComponent;

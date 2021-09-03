@@ -11,6 +11,7 @@ import CommitHistoryList from "../../components/commit-history-list/commit-histo
 import repoRecentCommitsgraphQLQuery from "../../graphql-queries/repo-commits-graphql-query";
 import "./repo-commits-view.css";
 
+// page to view repo commits
 const RepoCommitsView = () => {
   const { org, repository } = useParams();
   const routeHistory = useHistory();

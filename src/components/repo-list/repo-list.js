@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
@@ -11,6 +12,7 @@ import CommentIcon from "@material-ui/icons/Comment";
 
 import "./repo-list.css";
 
+// component to render an org repos in a list
 const RepoList = ({ repos, repositoryCount, onRepoClick }) => {
   return (
     <Paper className="repoListcontainer">
@@ -46,6 +48,12 @@ const RepoList = ({ repos, repositoryCount, onRepoClick }) => {
       </List>
     </Paper>
   );
+};
+
+RepoList.propTypes = {
+  repos: PropTypes.array.isRequired,
+  repositoryCount: PropTypes.number.isRequired,
+  onRepoClick: PropTypes.func.isRequired
 };
 
 export default RepoList;

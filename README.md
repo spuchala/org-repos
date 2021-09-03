@@ -3,6 +3,7 @@
 ### Table of Contents
 
 **[Project Structure](#project-structure)**<br>
+**[Component Structure](#component-structure)**<br>
 **[Steps to run the app](#steps-to-run-the-app)**<br>
 **[Steps to run unit tests](#steps-to-run-unit-tests)**<br>
 **[Features to include in future](#features-to-include-in-future)**<br>
@@ -21,6 +22,9 @@
 | graphql-queries | graphql queries for org search, repo commits                      |
 | test-helpers    | mock response files for react apollo                              |
 | constants       | reusable constants                                                |
+
+## Component Structure
+![Diagram](images/components_structure.png)
 
 ## Steps to run the app
 

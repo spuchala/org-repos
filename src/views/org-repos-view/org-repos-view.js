@@ -39,7 +39,7 @@ const OrgReposView = () => {
     <>
       <Typography variant="h3">Search Org Repos</Typography>
       <SearchOrgs
-        searchOrgQuery={org}
+        searchOrgQuery={org ?? ""}
         onSearchOrgsClick={searchInput => handleSearchOrgsClick(searchInput)}
       />
       <RenderComponent

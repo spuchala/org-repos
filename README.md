@@ -10,7 +10,7 @@
 
 ## Project Structure
 
-- This app is built on GitHub GraphQL API V4
+- This app is built with React framework on GitHub GraphQL API V4
 - Using React Router to set up routes for (landing page, search org url, view repo commits) examples: http://localhost:3000/, http://localhost:3000/netflix/repositories, http://localhost:3000/netflix/Hystrix/commits
 - Using Material UI design framework components as building blocks
 
@@ -24,6 +24,7 @@
 | constants       | reusable constants                                                |
 
 ## Component Structure
+
 ![Diagram](public/components_structure.png)
 
 ## Steps to run the app

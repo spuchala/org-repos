@@ -21,7 +21,6 @@ const RenderComponent = ({ loading, data, error, children }) => {
       </div>
     );
   } else if (error) {
-    debugger;
     return (
       <div className="errorMessageContainer">
         <Typography>{error.message ? error.message : errorMessage}</Typography>
@@ -39,7 +38,7 @@ const RenderComponent = ({ loading, data, error, children }) => {
 
 RenderComponent.propTypes = {
   loading: PropTypes.bool,
-  error: PropTypes.bool,
+  error: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]),
   data: PropTypes.array
 };
 

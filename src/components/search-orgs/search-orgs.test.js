@@ -39,4 +39,16 @@ describe("Search Orgs Componenet tests", () => {
     // expect mock onSearchOrgsClick to be fired
     expect(props.onSearchOrgsClick).toHaveBeenCalled();
   });
+
+  test("enter key should trigger search button click", () => {
+    const searchOrgsButtonElement = screen.getByRole("button", {
+      name: /Search/i
+    });
+    fireEvent.keyDown(searchOrgsButtonElement, {
+      key: "Enter",
+      code: "Enter"
+    });
+    // expect mock onSearchOrgsClick to be fired
+    expect(props.onSearchOrgsClick).toHaveBeenCalled();
+  });
 });
